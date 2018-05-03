@@ -4,6 +4,13 @@ phases:
   build:
     commands:
       - ./gradlew jar
+  install:
+    commands:
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket lamdbda-only
+                                   --output-template-file outputSamTemplate.yaml
 artifacts:
+  type: zip
   files:
+    - samTemplate.yaml
+    - outputSamTemplate.yaml
     - build/libs/alert-lambda-1.0-SNAPSHOT.jar
