@@ -1,0 +1,17 @@
+# ignoring IntelliJ Idea IDE files
+.idea
+*.iml
+*.ipr
+*.iws
+
+
+# ignoring Maven build tool files
+target
+# ignore build folder
+build
+
+# ignoring Gradle tmp folder
+.gradle
+
+# ignoring git properties file
+git.properties
