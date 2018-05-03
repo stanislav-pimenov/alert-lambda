@@ -7,10 +7,8 @@ phases:
       - ./gradlew jar
   install:
     commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket lamdba-only
-                                   --output-template-file outputSamTemplate.yaml
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket lambda-only --output-template-file outputSamTemplate.yaml
 artifacts:
-  type: zip
   files:
     - samTemplate.yaml
     - outputSamTemplate.yaml
