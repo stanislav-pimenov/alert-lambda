@@ -6,7 +6,11 @@ phases:
       - echo Build started on `date`
       - chmod +x gradlew
       - ./gradlew jar
+  post_build:
+    commands:
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket lambda-only --output-template-file outputSamTemplate.yaml
 artifacts:
   files:
     - samTemplate.yaml
+    - outputSamTemplate.yaml
     - build/libs/alert-lambda-1.0-SNAPSHOT.jar
