@@ -13,6 +13,6 @@ public class AlertRequestHandler implements RequestHandler<Map<String, Object>, 
 
     public String handleRequest(Map<String, Object> input, Context context) {
         LOGGER.info("Request: {}", input);
-        return "Response Ok";
+        return "Response Okay";
     }
 }
