@@ -1,0 +1,9 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - ./gradlew jar
+artifacts:
+  files:
+    - build/libs/alert-lambda-1.0-SNAPSHOT.jar
